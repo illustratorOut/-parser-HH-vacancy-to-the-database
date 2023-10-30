@@ -14,6 +14,7 @@
 
 ---
 ![1.gif](..%2F..%2FDownloads%2F1.gif)
+https://github.com/illustratorOut/-parser-HH-vacancy-to-the-database/blob/main/1.gif?raw=true
 > [!NOTE]
 > В **<font color="yellow">companies.json </font>** перечислены работодатели по которым будет осуществляться поиск
 > вакансий:
