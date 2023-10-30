@@ -13,7 +13,7 @@
 | 5 |                                     |               **url**               |
 
 ---
-![.gif](..%2F..%2FDownloads%2F.gif)
+![1.gif](..%2F..%2FDownloads%2F1.gif)
 > [!NOTE]
 > В **<font color="yellow">companies.json </font>** перечислены работодатели по которым будет осуществляться поиск
 > вакансий:
