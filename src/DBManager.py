@@ -102,7 +102,7 @@ VALUES
             salary_min = vacancy['salary']['from'] if vacancy['salary'] and vacancy['salary']['from'] is not None else 0
             vacancies.append((
                 vacancy['id'],
-                vacancy['name'],
+                vacancy['name'].lower(),
                 vacancy['employer']['id'],
                 salary_min,
                 vacancy['alternate_url']
@@ -138,4 +138,30 @@ SELECT
 FROM vacancies
         """
         values = self.__fetchall(query)[0][0]
+        return values
+
+    def get_companies_and_vacancies_count(self):
+        query = """
+SELECT employers.title, COUNT(vacancies.employer_id) FROM employers
+INNER JOIN vacancies USING(employer_id)
+GROUP BY employers.title         
+        """
+        values = self.__fetchall(query)
+        return values
+
+    def get_vacancies_with_higher_salary(self):
+        query = f"""
+SELECT * FROM vacancies
+WHERE salary_min > {self.get_avg_salary()}
+ORDER BY salary_min DESC        
+        """
+        values = self.__fetchall(query)
+        return values
+
+    def get_vacancies_with_keyword(self, user_input):
+        query = f"""
+SELECT * FROM vacancies
+WHERE title LIKE ('%{user_input}%')        
+        """
+        values = self.__fetchall(query)
         return values
